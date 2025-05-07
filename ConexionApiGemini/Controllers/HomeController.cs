@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ConexionApiGemini.Models;
+using ConexionApiGemini.Repository;
 
 namespace ConexionApiGemini.Controllers;
 
@@ -13,8 +14,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public async Task <IActionResult> Index()
     {
+        GeminiRepository repo = new GeminiRepository();
+        string answer = await repo.GetChatBotResponse("¿Dame un resumen de la pelicula coco?");
         return View();
     }
 
