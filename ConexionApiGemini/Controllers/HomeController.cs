@@ -18,7 +18,7 @@ public class HomeController : Controller
     {
         GeminiRepository repo = new GeminiRepository();
         string answer = await repo.GetChatBotResponse("¿Dame un resumen de la pelicula coco?");
-        return View();
+        return View(answer);
     }
 
     public IActionResult Privacy()
