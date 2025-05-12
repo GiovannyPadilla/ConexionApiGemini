@@ -1,7 +1,12 @@
+using ConexionApiGemini.Interface;
+using ConexionApiGemini.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton <IChatBotService, DeepseekRepository>();
 
 var app = builder.Build();
 

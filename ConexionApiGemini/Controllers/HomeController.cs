@@ -11,10 +11,11 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
     private readonly IChatBotService _chatBotService;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IChatBotService chatBotService)
     {
         _logger = logger;
-        _chatBotService = new GeminiRepository();
+        _chatBotService = chatBotService;
+        _chatBotService = chatBotService;
     }
 
     public async Task <IActionResult> Index()

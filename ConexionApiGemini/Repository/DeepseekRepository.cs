@@ -4,9 +4,9 @@ namespace ConexionApiGemini.Repository
 {
     public class DeepseekRepository : IChatBotService
     {
-        public Task<string> GetChatBotResponse(string prompt)
+        public async Task<string> GetChatBotResponse(string prompt)
         {
-            throw new NotImplementedException();
+         return "Este es un string de Deepseek";
         }
     }
 
